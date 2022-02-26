@@ -1,11 +1,72 @@
 
-const valores = [1, 2, 3, 4]
-const soma = valores.reduce ((acumulador, atual) => {
-    return acumulador + atual
-})
-console.log(soma)
+//  () => {}
+
+// const hello = () => console.log("Hello")        // ou const hello = () => {console.log("Hello")} 
+// hello()
+
+//pode emitir as chaves desde que tenha apenas uma função e não precisa usar return
+//quando tem chave precisa necessariamente de return 
+
+// de:
+// const dobro = (n) => {
+//     return 2*n
+// }
+//para:
+// const dobro = (n) => n*2
+// console.log(dobro(5))
 
 
+
+
+
+
+// const triplo = function (n = 10) {   // valor padrão para parametros 
+//     return n * 3
+// }
+// console.log(triplo(5))
+// console.log(triplo())
+
+
+// const dobro = function (n){
+//     return 2*n
+// }
+// const resultado = dobro(6)
+// console.log(resultado)
+
+
+// function soma (a, b){
+//     return a + b
+// }
+// const res = soma(2, 3)
+// console.log(res)
+
+
+// //definição da função
+
+// function hello (){
+//     console.log("oi")
+// }
+
+// //chamada da funcao
+// //ou seja, ponto em que ela é colocada em execucao 
+// hello()
+
+
+// function hello (nome){
+//     console.log("Oi, " + nome)
+// }
+// hello('Jose')
+
+
+
+
+
+
+// const valores = [1, 2, 3, 4]
+// const soma = valores.reduce ((acumulador, atual) => {
+//     return acumulador + atual
+// })
+// console.log(soma)
 
 
 
