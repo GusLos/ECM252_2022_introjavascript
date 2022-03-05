@@ -1,6 +1,162 @@
 
 
 
+function calculoRapidinho (numero){
+    return Promise.resolve ((numero * (numero + 1)) / 2)
+}
+
+calculoRapidinho(2).then(res => console.log(res))
+
+
+
+
+
+
+
+
+
+
+//1 + 2 + 3 + ... + n-1 + n
+// function calculoDemorado (numero){  //sincrono
+//     let res = 0
+//     for (let i = 1; i <= numero; i++){
+//         res += i
+//     }
+//     return res
+// }
+// const res = calculoDemorado(100)
+
+
+
+// function calculoDemorado (numero){      //assincrona
+//     return new Promise (function (resolve, reject) {
+//         if (numero < 0)
+//             reject ("Por favor, informe apenas valores positivos.")
+//         let res = 0
+//         for (let i = 1; i <= numero; i++)
+//             res += i
+//         resolve(res)
+//     })
+// }
+
+// const res = calculoDemorado(100)
+// //res.then((resultado) => console.log(resultado)).catch((erro) => console.log("Falhou: "+ erro))
+// res
+// .then((resultado) => console.log(resultado))
+// .catch((erro) => console.log("Falhou: "+ erro))
+
+// const res2 = calculoDemorado(-1)
+// res2
+// .then((resultado) => console.log(resultado))
+// .catch((erro) => console.log("Falhou: "+ erro))
+
+
+
+
+//------------------------------
+
+
+// const fs = require('fs')
+// //função callback       //função chamada no futuro ?
+// const abrirArquivo = function (nomeArquivo){
+//     const exibirConteudo = function (erro, conteudo){
+//         if (erro) {
+//             console.log(`Deu erro: ${erro}`)
+//             //console.log('Deu erro ' + erro)
+//         }
+//         else {
+//             let fd
+//             console.log(`Conteudo: ${conteudo.toString()}`)
+
+//             const triplo = +conteudo.toString() * 3
+//             const finalizar = (erro) => {
+//                 if (erro)
+//                     console.log("Erro ao salvar o triplo")
+//                 else    
+//                     console.log("Salvou com sucesso")
+//                 fs.close(fd)
+//             }
+//             fd = fs.writeFile('triplo.txt', triplo.toString(), finalizar)
+//         }
+//     }
+//     fs.readFile(nomeArquivo, exibirConteudo)
+// }
+
+// abrirArquivo("arquivo.txt")         //inferno de callback
+
+
+
+
+// setTimeout (function (){
+//     console.log("Dentro da timeout")
+// },0)//espera 0 milisegundos
+
+// const umSegundoNoFuturo = new Date().getTime() + 1000
+// while (new Date().getTime() <= umSegundoNoFuturo);
+// console.log("Fora da timeout")
+
+
+
+
+
+
+
+//processamento assincrono
+
+// function demorada () {
+//     const atualMais2Segundos = new Date().getTime() + 2000
+//     while (new Date().getTime() <= atualMais2Segundos);
+//     const d = 8 + 4
+//     return d
+// }
+
+
+// const a = 2 + 3
+// const b = 5 + 9
+
+// setTimeout(function(){
+//     const d = demorada()
+//     console.log(d)
+// }, 500)      //espera 500 milisegundos
+
+// const e = a + b
+// console.log(e)
+
+
+
+
+
+
+
+
+
+
+
+
+// function demorada () {
+//     const atualMais2Segundos = new Date().getTime() + 2000
+//     while (new Date().getTime() <= atualMais2Segundos);
+//     const d = 8 + 4
+//     return d
+// }
+
+
+// const a = 2 + 3
+// const b = 5 + 9
+// const d = demorada()        //precessamento bloqueante
+// const e = a + b + 2
+// console.log(e)
+
+
+
+
+
+//precessamento sincrono?
+
+// console.log('Eu sou primeiro')
+// console.log('Agora sou eu...')
+// console.log('Sou o ultimo...')
+
 
 
 
@@ -9,27 +165,27 @@
 //armazenar função em JSON
 
 
-const calc = {
-    soma: (a, b) => a + b,
-    subtracao: function (a, b) {return a - b}
-}
+// const calc = {
+//     soma: (a, b) => a + b,
+//     subtracao: function (a, b) {return a - b}
+// }
 
-calc.soma = (a, b, c) => a + b + c      //independente de calc ser let ou const, pois afeta calc não soma
+// calc.soma = (a, b, c) => a + b + c      //independente de calc ser let ou const, pois afeta calc não soma
 
-console.log(calc.soma(2,3,4))
-console.log(calc.subtracao(2,3))
-
-
+// console.log(calc.soma(2,3,4))
+// console.log(calc.subtracao(2,3))
 
 
 
-//abreviação "JSON"
-const nome = 'João'
-const idade = 20
-const pessoa = {
-    nome: nome,
-    idade: idade        // pode omitir parte do JSON ficando :    pessoa = {nome, idade}
-}
+
+
+// //abreviação "JSON"
+// const nome = 'João'
+// const idade = 20
+// const pessoa = {
+//     nome: nome,
+//     idade: idade        // pode omitir parte do JSON ficando :    pessoa = {nome, idade}
+// }
 
 
 
