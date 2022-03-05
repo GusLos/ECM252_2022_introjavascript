@@ -1,50 +1,208 @@
 
 
-//devolver uma nova coleção 
-//que possui todos os elementos 
-//de v que fazem com que f produza true
 
-function filter (v, f){
-    let r = []
-    let x = 0
-    for (let i = 0; i < v.length; i++){
-        if (f(v[i])){
-            r[x] = v[i]
-            x++
-        }
-    }
-    return r
+
+
+
+//----------------------------------------------------------------------------------------------------------------
+
+//armazenar função em JSON
+
+
+const calc = {
+    soma: (a, b) => a + b,
+    subtracao: function (a, b) {return a - b}
+}
+
+calc.soma = (a, b, c) => a + b + c      //independente de calc ser let ou const, pois afeta calc não soma
+
+console.log(calc.soma(2,3,4))
+console.log(calc.subtracao(2,3))
+
+
+
+
+
+//abreviação "JSON"
+const nome = 'João'
+const idade = 20
+const pessoa = {
+    nome: nome,
+    idade: idade        // pode omitir parte do JSON ficando :    pessoa = {nome, idade}
 }
 
 
 
-//[2]
-console.log(filter ([1, 2, 3, 4], e => e % 2 === 0))
+
+
+
+
+//coleção - o que sta em [], para acessar tem que usar [0] (número)
+
+
+
+// let c = {
+//     cnpj: 22112211000145,
+//     endereco: {
+//         logradouro: 'Rua B',
+//         numero: 122,
+//         bairro: "Vila A"
+//     },
+//     veiculos: [
+//         {
+//             marca: "Ford",
+//             modelo: 'Ka',
+//             ano: 1995,
+//             revisoes: [
+//                 {
+//                     data: '14/02/1996',
+//                     consultor: 'Fábio'
+//                 },
+//                 {
+//                     data: '15/03/1997',
+//                     consultor: 'João'
+//                 }
+//             ]
+//         },
+//         {
+//             marca: 'Volks',
+//             modelo: "Nivus",
+//             ano: 2020
+//         },
+//         {
+//             marca: 'Chevrolet',
+//             modelo: 'Onix',
+//             ano: 2022
+//         }
+//     ]
+// }
+
+
+// console.log(c.veiculos[0].revisoes[1].consultor)
 
 
 
 
 
-// produzir uma coleção nova que,
-// para cada elemento de v[i] possui o valor
-// resultante de f(v[i])
+// let p = {
+//     nome: "Maria",
+//     idade: 19,
+//     endereco: {
+//         logradouro: 'Rua B',
+//         numero: 122
+//     }
+// }
 
-function map (v, f){
-    let r = []
-    for (let i = 0; i < v.length; i++){
-        r[i] = f(v[i])
-    }
-    return r
-}
-
-
-//[4, 3]
-console.log(map(['abcd', 'abc', 'abcde', 'a'], e => e.length))
-
+// console.log(p.endereco.logradouro)
+// console.log(p['endereco']['numero'])
+// console.log(p.endereco['logradouro'])
+// console.log(p['endereco'].numero)
+////pode usar os dois jeitos
 
 
 
 
+
+// //par chave(nome variavel, sempre string, n numero) e valor
+
+// let pessoa = {
+//     nome: "José",
+//     idade: 17
+// }
+
+// console.log(pessoa.nome)
+// console.log(pessoa['idade'])
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------
+
+
+//JSON  Javascript Object Notation
+
+
+
+// function eAgora(){
+//     let cont = 1
+//     function f1 (){
+//         console.log(cont)
+//     }
+//     cont++
+//     function f2(){
+//         console.log(cont)
+//     }
+//     //isso é um objeto JSON
+//     return {f1, f2}
+// }
+
+////function f1 (){
+////    console.log("ola")
+////}
+
+
+// let res = eAgora()
+// res.f1()
+// res.f2()
+
+// //explicação - javascript tem varias passagens, faz uma passagem e realiza não faz as ordens, 
+// //só guarda as declarações na tabela de simbolos, na segunda as execuções são realizadas, realiza 
+// //a "atualização" das variaveis e depois executa a função (nesse caso)
+
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------
+
+
+// //devolver uma nova coleção 
+// //que possui todos os elementos 
+// //de v que fazem com que f produza true
+
+// function filter (v, f){
+//     let r = []
+//     let x = 0
+//     for (let i = 0; i < v.length; i++){
+//         if (f(v[i])){
+//             r[x] = v[i]
+//             x++
+//             //r.push(v[i])??    ai n precisa do x
+//         }
+//     }
+//     return r
+// }
+
+
+
+// //[2]
+// console.log(filter ([1, 2, 3, 4], e => e % 2 === 0))
+
+
+
+
+
+// // produzir uma coleção nova que,
+// // para cada elemento de v[i] possui o valor
+// // resultante de f(v[i])
+
+// function map (v, f){
+//     let r = []
+//     for (let i = 0; i < v.length; i++){
+//         r[i] = f(v[i])          //ou
+//         //r.push(f(v[i]))
+//     }
+//     return r
+// }
+
+
+// //[4, 3]
+// console.log(map(['abcd', 'abc', 'abcde', 'a'], e => e.length))
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------
 
 
 
