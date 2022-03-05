@@ -1,4 +1,74 @@
 
+
+//devolver uma nova coleção 
+//que possui todos os elementos 
+//de v que fazem com que f produza true
+
+function filter (v, f){
+    let r = []
+    let x = 0
+    for (let i = 0; i < v.length; i++){
+        if (f(v[i])){
+            r[x] = v[i]
+            x++
+        }
+    }
+    return r
+}
+
+
+
+//[2]
+console.log(filter ([1, 2, 3, 4], e => e % 2 === 0))
+
+
+
+
+
+// produzir uma coleção nova que,
+// para cada elemento de v[i] possui o valor
+// resultante de f(v[i])
+
+function map (v, f){
+    let r = []
+    for (let i = 0; i < v.length; i++){
+        r[i] = f(v[i])
+    }
+    return r
+}
+
+
+//[4, 3]
+console.log(map(['abcd', 'abc', 'abcde', 'a'], e => e.length))
+
+
+
+
+
+
+
+
+
+//closure
+// function f (){
+//     let nome  = "João"
+//     function g () {
+//         console.log(nome)
+//     }
+//     g()
+// }
+
+// f()
+
+
+
+
+
+
+
+
+
+
 //  () => {}
 
 // const hello = () => console.log("Hello")        // ou const hello = () => {console.log("Hello")} 
