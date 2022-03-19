@@ -1,13 +1,102 @@
 
 
+//---------------------------------------------------------------------------------------------------------------------------------------
+//
 
+
+function fatorial(n){
+    if (n < 0) return Promise.reject("Valor não pode ser negativo")
+    let res = 1
+    for (let i = 2; i <= n; i++) res *= i
+    return Promise.resolve(res)        //atalho para new Promise... 
+}
+
+
+//typescript????
+
+
+//await só funciona com função async
+async function chamadaComAsyncAwait(){
+    try{
+        // const f2 = await fatorial(-10)
+        // console.log(f2)
+        const f1 = await fatorial(10)
+        console.log(f1)
+        const f2 = await fatorial(-10)
+        console.log(f2)
+    }
+    catch (e){
+        console.log(e)
+    }
+}
+
+chamadaComAsyncAwait()
+
+
+
+
+// function chamadaComThenCatch(){
+//     fatorial(10)
+//     .then(res => console.log(res))
+//     .catch(erro => console.log(erro))
+
+//     fatorial(-10)
+//     .then(res => {
+//         console.log(res)
+//     })
+//     .catch(erro => console.log(erro))
+// }
+
+// chamadaComThenCatch()
+
+
+
+
+
+
+
+
+
+
+
+//com async a função devolve uma promise.resolve , não um texto
+
+// async function hello(nome){
+//     return `Hello, ${nome}`
+// }
+
+// const promise = hello("Ana")
+// promise.then(res => console.log(res))
+
+//mesma coisa que a função de baixo
+
+
+
+// function hello (nome){
+//     return new Promise(function(resolve, reject){
+//         resolve(`Hello ${nome}`)
+//     })
+// }
+
+// hello("Pedro").then((res) => console.log(res))
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+/*
 function calculoRapidinho (numero){
     return Promise.resolve ((numero * (numero + 1)) / 2)
 }
 
 calculoRapidinho(2).then(res => console.log(res))
 
-
+*/
 
 
 
